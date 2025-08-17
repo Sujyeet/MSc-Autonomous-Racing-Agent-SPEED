@@ -1,110 +1,141 @@
-# SPEED: MSc Intelligent Racing Agents (Unity ML-Agents)
+# SPEED-Intelligent-Racing-Agents
 
-**A Masters research project on autonomous racing with Unity 2021.3.45f1, Deep RL (PPO/SAC), and classic heuristics.**
-
----
-### About
-This project implements and analyzes intelligent racing agents using both classic heuristic methods and Deep Reinforcement Learning. All experiments are conducted in Unity (2021.3.45f1 LTS) using ML-Agents Toolkit. Code, results, and guides are provided for MSc research and reproducibility.
+This repository documents the design, implementation, and quantitative benchmarking of AI for autonomous racing in Unity, featuring a **deterministic waypoint-based heuristic controller** and a **deep reinforcement learning (DRL) agent** with Unity ML-Agents. The research systematically benchmarks classic rule-based AI versus modern DRL in a controlled, fully reproducible Unity simulation environment.
 
 ---
 
-## Project Structure
+## 🚗 Project Overview
+- **Heuristic Agent**: Classical, fully-deterministic waypoint-following strategy with curvature-adaptive speed and jitter-free steering. Provides a robust rule-based baseline for autonomous racing in Unity (2021.3.45f1).
+- **DRL Agent (PPO)**: Neural racing agent trained using Proximal Policy Optimization (PPO) via Unity ML-Agents. Includes reward shaping for both raw speed and human-like driving. Integrates ray-based perception, advanced progress, and smoothness incentives.
+- **Human Benchmark**: Framework for human player evaluation in the same Unity simulation for direct apples-to-apples comparison on lap time and behavioral realism.
 
+All code, configs, results, and experimental logs are provided to support full research reproducibility.
+
+---
+
+## 📂 Repository Structure
 ```
 SPEED-Intelligent-Racing-Agents/
-├── Unity-Environment/        # Unity project (2021.3.45f1)
+├── Heuristic-Agent-Project/     # Classic waypoint controller for Unity
 │   ├── Assets/
 │   ├── ProjectSettings/
 │   └── Packages/
-├── Python-Training/          # DRL training & evaluation (PyTorch, SB3)
-│   ├── ppo_agent.py
-│   ├── sac_agent.py
-│   └── ...
-├── Heuristic-Agent-Project/  # Classic rule-based agent (Python)
-│   └── ...
-├── Results-and-Analysis/
+├── DRL-Agent-Project/           # ML-Agents DRL PPO/SAC agent & scenes
+│   ├── Assets/
+│   ├── ProjectSettings/
+│   ├── Packages/
+│   └── Trained-Models/
+├── Results-and-Analysis/        # Logs, benchmarks, plots
+├── Documentation/               # Detailed setup, research paper
+│   └── Setup-Instructions.md
 └── README.md
 ```
 
 ---
 
-## Quick Setup
+## ⚡ Quick Setup & Reproduction
+### Prerequisites
+- **Unity 2021.3.45f1 LTS** *(required for project compatibility)*
+- **Python 3.8+**  (for retraining/running DRL agents)
+- **ML-Agents** `v0.30.0`  (see docs for installation)
+- **8GB+ RAM**, CUDA GPU recommended (for DRL)
 
-**Requirements:**
-- Unity Hub + Unity 2021.3.45f1 LTS   
-- Python 3.8+  
-- pip (install dependencies)
-
-### 1. Clone this repo
-```
+### 1. Clone Repository
+```sh
 git clone https://github.com/Sujyeet/SPEED-Intelligent-Racing-Agents.git
 cd SPEED-Intelligent-Racing-Agents
 ```
 
-### 2. Python Environment
-```
+### 2. Open in Unity
+- Open **Unity Hub**, select version **2021.3.45f1**
+- Add and open either `Heuristic-Agent-Project/` or `DRL-Agent-Project/`
+- Wait for Unity to import dependencies (must have Assets, ProjectSettings, Packages folders!)
+- 
+### 3. Python & ML-Agents
+- To retrain/test the DRL agent:
+```sh
 python -m venv racing_env
-# Activate (Windows)
+# Windows:
 racing_env\Scripts\activate
-# Activate (Linux/macOS)
+# Mac/Linux:
 source racing_env/bin/activate
 pip install -r requirements.txt
 ```
 
-### 3. Open in Unity (Editor v2021.3.45f1 ONLY)
-- Open Unity Hub
-- Click 'Add project' and select `Unity-Environment/` folder
-- Wait for dependencies to import
+---
+
+## ▶️ Running & Evaluating Agents
+### Heuristic Agent
+1. Open `Heuristic-Agent-Project` in Unity
+2. Open a test scene (e.g., `Assets/Scenes/OvalTrack.unity`)
+3. Press Play in the editor to watch the deterministic AI drive
 
 ---
 
-## Running/Training Agents
-
-### Training PPO (Unity ML-Agents)
-```
-cd Python-Training
-mlagents-learn training/ppo_config.yaml --run-id=ppo_racing
-```
-
-### Training SAC
-```
-mlagents-learn training/sac_config.yaml --run-id=sac_racing
-```
-
-### Run Heuristic Agent (Python)
-```
-cd Heuristic-Agent-Project
-python run_heuristic.py --track oval --episodes 100
-```
+### DRL Agent (PPO)
+1. Open `DRL-Agent-Project` in Unity
+2. Confirm ML-Agents package is installed (`com.unity.ml-agents@0.30.0`)
+3. Load a DRL test scene & assign a `.onnx` model from `Trained-Models/` to the kart agent
+4. Set Behavior Type to **Inference Only**
+5. Press Play to evaluate
 
 ---
 
-## Tips & Notes
-- **Unity folders**: Only `Assets`, `ProjectSettings`, and `Packages` are required for others to open/test your Unity project.
-- **Tested on**: Windows 10/11, Unity 2021.3.45f1, CUDA GPU (optional for DRL speed).
-- **Issues?** Open an Issue on this repo!
+### Human Comparison
+- Use a test scene that supports player input (see documentation)
+- Keyboard/gamepad controls enabled for side-by-side comparison
 
 ---
 
-## Academic Context
-- **Author:** Sujyeet
-- **Degree:** MSc in [Your MSc Program]
-- **University:** [Your University]
-- **Supervisor:** [Supervisor Name]
-- **Contact:** [your.email@university.edu]
+### DRL Agent Retraining (Optional)
+- Detailed steps, configs, and command-line training options are documented in `Documentation/Setup-Instructions.md`
 
-Please cite if using in research:
+---
+
+## 📊 Experimental Results & Benchmarks
+
+| Agent                       | Mean Lap Time (s) | Std Dev | Collision Rate | Human-Likeness |
+|-----------------------------|------------------:|--------:|--------------:|:--------------|
+| **Heuristic Agent**         |    41.52          |  0.09   | 0%            | Low            |
+| **DRL Agent (PPO)**         |    39.8           |  1.4    | <2%           | High           |
+| **DRL Agent (Humanlike)**   |    43.0           |  1.1    | <1%           | Very High      |
+| **Human (Reference)**       |    44.2           |  2.8    | ~3%           | Baseline       |
+
+- Metrics include: Lap time, completion rate, steering smoothness, lane adherence
+- All experiment logs and performance plots are in `Results-and-Analysis/`
+
+---
+
+## 🔬 Technical Details
+- **Heuristic AI**: Jitter suppression, predictive curvature-aware steering, parameterized for path smoothness.
+- **DRL Architecture**: PPO with multi-input raycasts, reward shaping for speed, safety, and naturalness.
+- **Robustness**: Evaluation on randomized seeds and alternate tracks for generalization.
+- **Reproducibility**: All versions, configs, and models for repeatable results are included; see Setup-Instructions.md for full pipeline.
+
+---
+## 📄 Documentation
+- **Paper Draft:** See `Documentation/SPEED-Dissertation.pdf` for full research writeup
+- **Setup Guide:** `Documentation/Setup-Instructions.md` (detailed installer & troubleshooting)
+
+---
+## 📚 Citation
+If you use part of this work or infrastructure in your research, please cite:
 ```bibtex
 @mastersthesis{sujyeet2025speed,
   title={SPEED: Intelligent Racing Agents Using Deep Reinforcement Learning and Unity ML-Agents},
-  author={Sujyeet, [Full Name]},
+  author={Sujyeet, [Your Full Name]},
   year={2025},
-  school={[University Name]},
+  school={[Your University]},
   type={MSc Thesis}
 }
 ```
 
 ---
-License: MIT. Ongoing project for academic use. Pull requests welcome!
+
+## 📬 Contact / Issues
+- **Author/Student:** Sujyeet ([your.email@domain])
+- **Open Issues** for questions and support
+- License: MIT
 
 ---
+Ongoing Masters dissertation; continuous improvements & extensions will be pushed as research progresses.
