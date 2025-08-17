@@ -1,263 +1,110 @@
-# MSc Autonomous Racing Agent SPEED
+# SPEED: MSc Intelligent Racing Agents (Unity ML-Agents)
 
-## Introduction
+**A Masters research project on autonomous racing with Unity 2021.3.45f1, Deep RL (PPO/SAC), and classic heuristics.**
 
-This repository presents the comprehensive implementation and research for an MSc project exploring autonomous racing agents through two distinct methodological approaches: traditional heuristic algorithms and modern Deep Reinforcement Learning (DRL) techniques. The research addresses fundamental questions in autonomous vehicle control within high-performance racing environments, where split-second decision-making, precise control, and adaptive strategies are paramount.
+---
+### About
+This project implements and analyzes intelligent racing agents using both classic heuristic methods and Deep Reinforcement Learning. All experiments are conducted in Unity (2021.3.45f1 LTS) using ML-Agents Toolkit. Code, results, and guides are provided for MSc research and reproducibility.
 
-The project emerged from the growing intersection of autonomous vehicle research and high-performance motorsports, where traditional control theory meets cutting-edge machine learning. By developing and rigorously comparing both heuristic and learning-based approaches, this work contributes to our understanding of when interpretable rule-based systems excel versus when adaptive neural approaches provide superior performance.
+---
 
-## Research Context & Objectives
-
-### Primary Research Questions
-
-• **Performance Comparison:** How do traditional heuristic approaches compare against modern DRL techniques across diverse racing scenarios?
-• **Interpretability vs. Adaptability:** What are the fundamental trade-offs between explainable heuristic methods and adaptive learning-based systems?
-• **Generalization:** Which approach demonstrates better transferability across different track configurations and environmental conditions?
-• **Computational Efficiency:** How do the computational requirements and real-time performance constraints differ between methodologies?
-
-### Academic Contributions
-
-• Systematic comparison framework for autonomous racing agents
-• Novel heuristic algorithms optimized for racing scenarios
-• Custom DRL architectures incorporating temporal reasoning for sequential decision-making
-• Comprehensive evaluation methodology with statistical validation
-• Open-source implementations enabling reproducible research
-
-## Project Architecture
+## Project Structure
 
 ```
-MSc-Autonomous-Racing-Agent-SPEED/
-├── Heuristic-Agent-Project/          # Rule-based agent implementation
-│   ├── README-Heuristic.md             # Detailed heuristic methodology
-│   ├── src/                             # Core algorithms & control logic
-│   ├── config/                          # Parameter configurations
-│   └── tests/                           # Unit and integration tests
-│
-├── DRL-Agent-Project/                # Deep Reinforcement Learning agent
-│   ├── README-DRL.md                    # DRL methodology & architecture
-│   ├── src/                             # Neural network implementations
-│   ├── training/                        # Training pipelines & utilities
-│   ├── Trained-Models/                  # Model checkpoints & weights
-│   └── evaluation/                      # Performance evaluation scripts
-│
-├── Documentation/                    # Comprehensive project documentation
-│   ├── Setup-Instructions.md           # Environment setup & installation
-│   ├── API-Reference.md                 # Code documentation & interfaces
-│   ├── Research-Methods.md              # Methodology & experimental design
-│   └── User-Guide.md                    # Usage examples & tutorials
-│
-├── Results-and-Analysis/             # Experimental results & analysis
-│   ├── Performance-Metrics/             # Quantitative performance data
-│   ├── Comparison-Studies/              # Statistical comparative analysis
-│   ├── Visualizations/                  # Charts, plots, & visual analysis
-│   └── Statistical-Analysis/            # Hypothesis testing & validation
-│
-├── requirements.txt                  # Python dependencies
-├── setup.py                          # Package installation configuration
-└── README.md                         # This documentation
+SPEED-Intelligent-Racing-Agents/
+├── Unity-Environment/        # Unity project (2021.3.45f1)
+│   ├── Assets/
+│   ├── ProjectSettings/
+│   └── Packages/
+├── Python-Training/          # DRL training & evaluation (PyTorch, SB3)
+│   ├── ppo_agent.py
+│   ├── sac_agent.py
+│   └── ...
+├── Heuristic-Agent-Project/  # Classic rule-based agent (Python)
+│   └── ...
+├── Results-and-Analysis/
+└── README.md
 ```
 
-## Installation & Setup
+---
 
-### Prerequisites
+## Quick Setup
 
-• **Python:** 3.8 or higher (3.9+ recommended for optimal performance)
-• **Hardware:** CUDA-capable GPU strongly recommended for DRL training
-• **System:** 8GB+ RAM, 10GB+ available disk space
-• **Dependencies:** Git, pip, virtual environment support
+**Requirements:**
+- Unity Hub + Unity 2021.3.45f1 LTS   
+- Python 3.8+  
+- pip (install dependencies)
 
-### Quick Installation
-
-1. **Clone & Navigate**
-   ```bash
-   git clone https://github.com/Sujyeet/MSc-Autonomous-Racing-Agent-SPEED.git
-   cd MSc-Autonomous-Racing-Agent-SPEED
-   ```
-
-2. **Environment Setup**
-   ```bash
-   # Create virtual environment
-   python -m venv racing_env
-   
-   # Activate environment
-   # Linux/MacOS:
-   source racing_env/bin/activate
-   # Windows:
-   racing_env\Scripts\activate
-   ```
-
-3. **Install Dependencies**
-   ```bash
-   # Install core requirements
-   pip install -r requirements.txt
-   
-   # For development (optional)
-   pip install -e .
-   ```
-
-4. **Verify Installation**
-   ```bash
-   python -c "import torch; print('PyTorch available:', torch.cuda.is_available())"
-   ```
-
-### Detailed Setup
-
-For comprehensive installation instructions including environment-specific configurations, GPU setup, and troubleshooting, see [Documentation/Setup-Instructions.md](Documentation/Setup-Instructions.md).
-
-## Agent Implementations
-
-### Heuristic Agent
-
-The heuristic approach implements traditional control theory and algorithmic decision-making:
-
-**Core Components:**
-• **Path Planning:** A* pathfinding with dynamic obstacle avoidance
-• **Speed Control:** Tuned PID controllers optimized for racing dynamics
-• **Decision Logic:** Rule-based system prioritizing safety and performance
-• **Sensor Processing:** Real-time LIDAR and camera data interpretation
-
-**Advantages:** Interpretable decisions, consistent performance, fast execution, predictable behavior under known conditions.
-
-### Deep Reinforcement Learning Agent
-
-The DRL approach leverages neural networks for adaptive learning:
-
-**Architecture:**
-• **Algorithms:** DQN, PPO, and SAC implementations with custom modifications
-• **Neural Networks:** CNN-LSTM hybrid architecture for spatial-temporal reasoning
-• **Training Environment:** Custom racing simulator with realistic physics
-• **Reward Engineering:** Multi-objective reward function balancing speed, safety, and efficiency
-
-**Advantages:** Adaptive learning, complex strategy development, superior generalization to unseen scenarios.
-
-## Usage Guide
-
-### Training Agents
-
-**Heuristic Agent Configuration:**
-```bash
-cd Heuristic-Agent-Project/
-python src/main.py --track oval --config config/aggressive.yaml --episodes 100
+### 1. Clone this repo
+```
+git clone https://github.com/Sujyeet/SPEED-Intelligent-Racing-Agents.git
+cd SPEED-Intelligent-Racing-Agents
 ```
 
-**DRL Agent Training:**
-```bash
-cd DRL-Agent-Project/
-# Start training with default parameters
-python training/train_ppo.py --env racing-v1 --episodes 10000
-
-# Advanced training with custom configuration
-python training/train_ppo.py --config configs/ppo_advanced.yaml --tensorboard
+### 2. Python Environment
+```
+python -m venv racing_env
+# Activate (Windows)
+racing_env\Scripts\activate
+# Activate (Linux/macOS)
+source racing_env/bin/activate
+pip install -r requirements.txt
 ```
 
-### Evaluation & Comparison
+### 3. Open in Unity (Editor v2021.3.45f1 ONLY)
+- Open Unity Hub
+- Click 'Add project' and select `Unity-Environment/` folder
+- Wait for dependencies to import
 
-**Individual Agent Evaluation:**
-```bash
-# Evaluate heuristic agent
-python Heuristic-Agent-Project/src/evaluate.py --model saved_models/heuristic_best.pkl
+---
 
-# Evaluate DRL agent
-python DRL-Agent-Project/evaluation/evaluate.py --model Trained-Models/ppo_best.pt
+## Running/Training Agents
+
+### Training PPO (Unity ML-Agents)
+```
+cd Python-Training
+mlagents-learn training/ppo_config.yaml --run-id=ppo_racing
 ```
 
-**Comparative Analysis:**
-```bash
-# Run comprehensive comparison
-python Results-and-Analysis/compare_agents.py --agents heuristic,drl --trials 100 --tracks all
-
-# Generate performance report
-python Results-and-Analysis/generate_report.py --output results_report.html
+### Training SAC
+```
+mlagents-learn training/sac_config.yaml --run-id=sac_racing
 ```
 
-## Research Methodology
+### Run Heuristic Agent (Python)
+```
+cd Heuristic-Agent-Project
+python run_heuristic.py --track oval --episodes 100
+```
 
-### Experimental Design
+---
 
-1. **Controlled Testing Environment:** Standardized racing scenarios with consistent evaluation metrics
-2. **Multiple Track Configurations:** Oval, road course, street circuit, and mixed-condition tracks
-3. **Statistical Validation:** Rigorous hypothesis testing with appropriate confidence intervals
-4. **Cross-validation:** K-fold validation ensuring robust performance estimates
-5. **Ablation Studies:** Component-wise analysis identifying key performance drivers
+## Tips & Notes
+- **Unity folders**: Only `Assets`, `ProjectSettings`, and `Packages` are required for others to open/test your Unity project.
+- **Tested on**: Windows 10/11, Unity 2021.3.45f1, CUDA GPU (optional for DRL speed).
+- **Issues?** Open an Issue on this repo!
 
-### Performance Metrics
+---
 
-• **Primary:** Lap time consistency, success rate (completed laps), safety scores
-• **Secondary:** Computational efficiency, memory usage, training time requirements
-• **Qualitative:** Strategy interpretability, behavior predictability, failure modes
+## Academic Context
+- **Author:** Sujyeet
+- **Degree:** MSc in [Your MSc Program]
+- **University:** [Your University]
+- **Supervisor:** [Supervisor Name]
+- **Contact:** [your.email@university.edu]
 
-## Key Findings
-
-[This section will be updated as research progresses with peer-reviewed results]
-
-### Preliminary Observations
-
-• **Consistency:** Heuristic agents demonstrate lower performance variance across trials
-• **Adaptability:** DRL agents show superior performance in novel or dynamic environments
-• **Computational Trade-offs:** Heuristic agents require ~10x less computational resources during execution
-• **Training Requirements:** DRL agents require extensive training data but show better long-term learning curves
-
-## Academic Citation
-
-If you use this work in your research, please cite:
-
+Please cite if using in research:
 ```bibtex
-@mastersthesis{sujyeet2025racing,
-  title={Autonomous Racing Agents: A Comparative Study of Heuristic and Deep Reinforcement Learning Approaches},
+@mastersthesis{sujyeet2025speed,
+  title={SPEED: Intelligent Racing Agents Using Deep Reinforcement Learning and Unity ML-Agents},
   author={Sujyeet, [Full Name]},
   year={2025},
   school={[University Name]},
-  type={MSc Thesis},
-  url={https://github.com/Sujyeet/MSc-Autonomous-Racing-Agent-SPEED}
+  type={MSc Thesis}
 }
 ```
 
-## Contributing & Collaboration
+---
+License: MIT. Ongoing project for academic use. Pull requests welcome!
 
-This research welcomes academic collaboration and contributions:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/research-enhancement`)
-3. Implement your changes with appropriate tests and documentation
-4. Commit with descriptive messages (`git commit -m 'Add statistical significance testing'`)
-5. Submit a pull request with detailed description
-
-### Research Collaboration
-
-For academic partnerships, dataset sharing, or research discussions, please reach out through the contact information below.
-
-## Acknowledgments
-
-• **Academic Supervisors:** [Supervisor Names] for invaluable guidance and expertise
-• **Research Community:** Open-source contributors to PyTorch, OpenAI Gym, and racing simulation frameworks
-• **University Resources:** [University Name] High-Performance Computing facilities
-• **Industry Partners:** [If applicable] for providing real-world validation data
-
-## License & Usage Rights
-
-This project is released under the MIT License, enabling both academic and commercial use while maintaining attribution requirements. See [LICENSE](LICENSE) for complete details.
-
-• **Academic Use:** Freely available for research purposes with appropriate citation
-• **Commercial Use:** Permitted under MIT License terms
-• **Modification:** Encouraged with attribution to original work
-
-## Contact & Support
-
-**Primary Author:** Sujyeet  
-**Institution:** [University Name]  
-**Academic Email:** [institutional.email@university.edu]  
-**Project Duration:** [Start Date] - [Expected Completion]  
-**Research Area:** Autonomous Systems, Machine Learning, Control Theory
-
-• **Technical Support:** For implementation questions, please use GitHub Issues
-• **Research Inquiries:** Direct academic questions to the email above
-• **Collaboration:** Open to research partnerships and joint publications
-
-## Project Status
-
-**Current Phase:** Active Development & Experimentation  
-**Latest Update:** August 2025  
-**Expected Completion:** [Date]  
-**Publication Status:** Thesis in progress, conference submissions planned
-
-This repository represents ongoing academic research. Methodologies, results, and implementations are continuously refined as the research progresses. For the most current findings and implementations, please check the latest releases and documentation updates.
+---
