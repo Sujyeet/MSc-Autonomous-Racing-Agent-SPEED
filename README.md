@@ -9,59 +9,62 @@ The project emerged from the growing intersection of autonomous vehicle research
 ## Research Context & Objectives
 
 ### Primary Research Questions
-- **Performance Comparison**: How do traditional heuristic approaches compare against modern DRL techniques across diverse racing scenarios?
-- **Interpretability vs. Adaptability**: What are the fundamental trade-offs between explainable heuristic methods and adaptive learning-based systems?
-- **Generalization**: Which approach demonstrates better transferability across different track configurations and environmental conditions?
-- **Computational Efficiency**: How do the computational requirements and real-time performance constraints differ between methodologies?
+
+• **Performance Comparison:** How do traditional heuristic approaches compare against modern DRL techniques across diverse racing scenarios?
+• **Interpretability vs. Adaptability:** What are the fundamental trade-offs between explainable heuristic methods and adaptive learning-based systems?
+• **Generalization:** Which approach demonstrates better transferability across different track configurations and environmental conditions?
+• **Computational Efficiency:** How do the computational requirements and real-time performance constraints differ between methodologies?
 
 ### Academic Contributions
-- Systematic comparison framework for autonomous racing agents
-- Novel heuristic algorithms optimized for racing scenarios
-- Custom DRL architectures incorporating temporal reasoning for sequential decision-making
-- Comprehensive evaluation methodology with statistical validation
-- Open-source implementations enabling reproducible research
 
-## 🏗️ Project Architecture
+• Systematic comparison framework for autonomous racing agents
+• Novel heuristic algorithms optimized for racing scenarios
+• Custom DRL architectures incorporating temporal reasoning for sequential decision-making
+• Comprehensive evaluation methodology with statistical validation
+• Open-source implementations enabling reproducible research
+
+## Project Architecture
 
 ```
 MSc-Autonomous-Racing-Agent-SPEED/
-├── 📁 Heuristic-Agent-Project/          # Rule-based agent implementation
+├── Heuristic-Agent-Project/          # Rule-based agent implementation
 │   ├── README-Heuristic.md             # Detailed heuristic methodology
 │   ├── src/                             # Core algorithms & control logic
 │   ├── config/                          # Parameter configurations
 │   └── tests/                           # Unit and integration tests
 │
-├── 📁 DRL-Agent-Project/                # Deep Reinforcement Learning agent
+├── DRL-Agent-Project/                # Deep Reinforcement Learning agent
 │   ├── README-DRL.md                    # DRL methodology & architecture
 │   ├── src/                             # Neural network implementations
 │   ├── training/                        # Training pipelines & utilities
 │   ├── Trained-Models/                  # Model checkpoints & weights
 │   └── evaluation/                      # Performance evaluation scripts
 │
-├── 📁 Documentation/                    # Comprehensive project documentation
+├── Documentation/                    # Comprehensive project documentation
 │   ├── Setup-Instructions.md           # Environment setup & installation
 │   ├── API-Reference.md                 # Code documentation & interfaces
 │   ├── Research-Methods.md              # Methodology & experimental design
 │   └── User-Guide.md                    # Usage examples & tutorials
 │
-├── 📁 Results-and-Analysis/             # Experimental results & analysis
+├── Results-and-Analysis/             # Experimental results & analysis
 │   ├── Performance-Metrics/             # Quantitative performance data
 │   ├── Comparison-Studies/              # Statistical comparative analysis
 │   ├── Visualizations/                  # Charts, plots, & visual analysis
 │   └── Statistical-Analysis/            # Hypothesis testing & validation
 │
-├── 📄 requirements.txt                  # Python dependencies
-├── 📄 setup.py                          # Package installation configuration
-└── 📄 README.md                         # This documentation
+├── requirements.txt                  # Python dependencies
+├── setup.py                          # Package installation configuration
+└── README.md                         # This documentation
 ```
 
 ## Installation & Setup
 
 ### Prerequisites
-- **Python**: 3.8 or higher (3.9+ recommended for optimal performance)
-- **Hardware**: CUDA-capable GPU strongly recommended for DRL training
-- **System**: 8GB+ RAM, 10GB+ available disk space
-- **Dependencies**: Git, pip, virtual environment support
+
+• **Python:** 3.8 or higher (3.9+ recommended for optimal performance)
+• **Hardware:** CUDA-capable GPU strongly recommended for DRL training
+• **System:** 8GB+ RAM, 10GB+ available disk space
+• **Dependencies:** Git, pip, virtual environment support
 
 ### Quick Installation
 
@@ -98,31 +101,34 @@ MSc-Autonomous-Racing-Agent-SPEED/
    ```
 
 ### Detailed Setup
-For comprehensive installation instructions including environment-specific configurations, GPU setup, and troubleshooting, see [`Documentation/Setup-Instructions.md`](Documentation/Setup-Instructions.md).
+
+For comprehensive installation instructions including environment-specific configurations, GPU setup, and troubleshooting, see [Documentation/Setup-Instructions.md](Documentation/Setup-Instructions.md).
 
 ## Agent Implementations
 
-### 🧠 Heuristic Agent
+### Heuristic Agent
+
 The heuristic approach implements traditional control theory and algorithmic decision-making:
 
 **Core Components:**
-- **Path Planning**: A* pathfinding with dynamic obstacle avoidance
-- **Speed Control**: Tuned PID controllers optimized for racing dynamics
-- **Decision Logic**: Rule-based system prioritizing safety and performance
-- **Sensor Processing**: Real-time LIDAR and camera data interpretation
+• **Path Planning:** A* pathfinding with dynamic obstacle avoidance
+• **Speed Control:** Tuned PID controllers optimized for racing dynamics
+• **Decision Logic:** Rule-based system prioritizing safety and performance
+• **Sensor Processing:** Real-time LIDAR and camera data interpretation
 
-**Advantages**: Interpretable decisions, consistent performance, fast execution, predictable behavior under known conditions.
+**Advantages:** Interpretable decisions, consistent performance, fast execution, predictable behavior under known conditions.
 
-### 🤖 Deep Reinforcement Learning Agent
+### Deep Reinforcement Learning Agent
+
 The DRL approach leverages neural networks for adaptive learning:
 
 **Architecture:**
-- **Algorithms**: DQN, PPO, and SAC implementations with custom modifications
-- **Neural Networks**: CNN-LSTM hybrid architecture for spatial-temporal reasoning
-- **Training Environment**: Custom racing simulator with realistic physics
-- **Reward Engineering**: Multi-objective reward function balancing speed, safety, and efficiency
+• **Algorithms:** DQN, PPO, and SAC implementations with custom modifications
+• **Neural Networks:** CNN-LSTM hybrid architecture for spatial-temporal reasoning
+• **Training Environment:** Custom racing simulator with realistic physics
+• **Reward Engineering:** Multi-objective reward function balancing speed, safety, and efficiency
 
-**Advantages**: Adaptive learning, complex strategy development, superior generalization to unseen scenarios.
+**Advantages:** Adaptive learning, complex strategy development, superior generalization to unseen scenarios.
 
 ## Usage Guide
 
@@ -167,26 +173,29 @@ python Results-and-Analysis/generate_report.py --output results_report.html
 ## Research Methodology
 
 ### Experimental Design
-1. **Controlled Testing Environment**: Standardized racing scenarios with consistent evaluation metrics
-2. **Multiple Track Configurations**: Oval, road course, street circuit, and mixed-condition tracks
-3. **Statistical Validation**: Rigorous hypothesis testing with appropriate confidence intervals
-4. **Cross-validation**: K-fold validation ensuring robust performance estimates
-5. **Ablation Studies**: Component-wise analysis identifying key performance drivers
+
+1. **Controlled Testing Environment:** Standardized racing scenarios with consistent evaluation metrics
+2. **Multiple Track Configurations:** Oval, road course, street circuit, and mixed-condition tracks
+3. **Statistical Validation:** Rigorous hypothesis testing with appropriate confidence intervals
+4. **Cross-validation:** K-fold validation ensuring robust performance estimates
+5. **Ablation Studies:** Component-wise analysis identifying key performance drivers
 
 ### Performance Metrics
-- **Primary**: Lap time consistency, success rate (completed laps), safety scores
-- **Secondary**: Computational efficiency, memory usage, training time requirements
-- **Qualitative**: Strategy interpretability, behavior predictability, failure modes
+
+• **Primary:** Lap time consistency, success rate (completed laps), safety scores
+• **Secondary:** Computational efficiency, memory usage, training time requirements
+• **Qualitative:** Strategy interpretability, behavior predictability, failure modes
 
 ## Key Findings
 
-*[This section will be updated as research progresses with peer-reviewed results]*
+[This section will be updated as research progresses with peer-reviewed results]
 
 ### Preliminary Observations
-- **Consistency**: Heuristic agents demonstrate lower performance variance across trials
-- **Adaptability**: DRL agents show superior performance in novel or dynamic environments
-- **Computational Trade-offs**: Heuristic agents require ~10x less computational resources during execution
-- **Training Requirements**: DRL agents require extensive training data but show better long-term learning curves
+
+• **Consistency:** Heuristic agents demonstrate lower performance variance across trials
+• **Adaptability:** DRL agents show superior performance in novel or dynamic environments
+• **Computational Trade-offs:** Heuristic agents require ~10x less computational resources during execution
+• **Training Requirements:** DRL agents require extensive training data but show better long-term learning curves
 
 ## Academic Citation
 
@@ -207,49 +216,48 @@ If you use this work in your research, please cite:
 
 This research welcomes academic collaboration and contributions:
 
-1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/research-enhancement`)
-3. **Implement** your changes with appropriate tests and documentation
-4. **Commit** with descriptive messages (`git commit -m 'Add statistical significance testing'`)
-5. **Submit** a pull request with detailed description
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/research-enhancement`)
+3. Implement your changes with appropriate tests and documentation
+4. Commit with descriptive messages (`git commit -m 'Add statistical significance testing'`)
+5. Submit a pull request with detailed description
 
 ### Research Collaboration
+
 For academic partnerships, dataset sharing, or research discussions, please reach out through the contact information below.
 
 ## Acknowledgments
 
-- **Academic Supervisors**: [Supervisor Names] for invaluable guidance and expertise
-- **Research Community**: Open-source contributors to PyTorch, OpenAI Gym, and racing simulation frameworks
-- **University Resources**: [University Name] High-Performance Computing facilities
-- **Industry Partners**: [If applicable] for providing real-world validation data
+• **Academic Supervisors:** [Supervisor Names] for invaluable guidance and expertise
+• **Research Community:** Open-source contributors to PyTorch, OpenAI Gym, and racing simulation frameworks
+• **University Resources:** [University Name] High-Performance Computing facilities
+• **Industry Partners:** [If applicable] for providing real-world validation data
 
 ## License & Usage Rights
 
-This project is released under the MIT License, enabling both academic and commercial use while maintaining attribution requirements. See [`LICENSE`](LICENSE) for complete details.
+This project is released under the MIT License, enabling both academic and commercial use while maintaining attribution requirements. See [LICENSE](LICENSE) for complete details.
 
-**Academic Use**: Freely available for research purposes with appropriate citation
-**Commercial Use**: Permitted under MIT License terms
-**Modification**: Encouraged with attribution to original work
+• **Academic Use:** Freely available for research purposes with appropriate citation
+• **Commercial Use:** Permitted under MIT License terms
+• **Modification:** Encouraged with attribution to original work
 
 ## Contact & Support
 
-**Primary Author**: Sujyeet  
-**Institution**: [University Name]  
-**Academic Email**: [institutional.email@university.edu]  
-**Project Duration**: [Start Date] - [Expected Completion]  
-**Research Area**: Autonomous Systems, Machine Learning, Control Theory
+**Primary Author:** Sujyeet  
+**Institution:** [University Name]  
+**Academic Email:** [institutional.email@university.edu]  
+**Project Duration:** [Start Date] - [Expected Completion]  
+**Research Area:** Autonomous Systems, Machine Learning, Control Theory
 
-**Technical Support**: For implementation questions, please use GitHub Issues  
-**Research Inquiries**: Direct academic questions to the email above  
-**Collaboration**: Open to research partnerships and joint publications
+• **Technical Support:** For implementation questions, please use GitHub Issues
+• **Research Inquiries:** Direct academic questions to the email above
+• **Collaboration:** Open to research partnerships and joint publications
 
 ## Project Status
 
-**Current Phase**: Active Development & Experimentation  
-**Latest Update**: August 2025  
-**Expected Completion**: [Date]  
-**Publication Status**: Thesis in progress, conference submissions planned
+**Current Phase:** Active Development & Experimentation  
+**Latest Update:** August 2025  
+**Expected Completion:** [Date]  
+**Publication Status:** Thesis in progress, conference submissions planned
 
----
-
-*This repository represents ongoing academic research. Methodologies, results, and implementations are continuously refined as the research progresses. For the most current findings and implementations, please check the latest releases and documentation updates.*
+This repository represents ongoing academic research. Methodologies, results, and implementations are continuously refined as the research progresses. For the most current findings and implementations, please check the latest releases and documentation updates.
