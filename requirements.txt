@@ -1,7 +1,12 @@
 mlagents==0.30.0
-numpy
-pandas
-matplotlib
-seaborn
-scipy
-tensorboard
+mlagents_envs==0.30.0
+numpy==1.23.5
+protobuf==3.20.3
+h5py==3.13.0
+Pillow==11.2.1
+grpcio==1.71.0
+pyyaml==6.0.2
+tensorboard==2.19.0
+attrs==25.3.0
+cattrs==1.5.0
+pypiwin32==223  # (Windows only; keep for compatibility)
