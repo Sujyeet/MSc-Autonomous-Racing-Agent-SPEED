@@ -1,116 +1,29 @@
 # Results and Analysis
 
-This folder contains experimental results, performance analysis, and comparative studies of the autonomous racing agents.
+This directory contains experimental results and analysis logs for the S.P.E.E.D racing agents project. The following agent-specific log folders are included:
 
-## Overview
+- **Enhanced Natural DRL Logs**: Results for the DRL agent with enhanced naturalistic behavior.
+- **Heuristic Agent Logs**: Baseline waypoint-following agent logs.
+- **Manual Player Logs**: Human/manual player runs.
+- **Simple DRL Logs**: DRL agent with simple network/reward.
 
-This directory houses all analysis-related content including:
+Each folder contains:
+- CSV files of run summaries (lap time, speed, steering, and path deviation metrics)
+- (If present) raw or detailed logs for each experiment run
 
-- Experimental results from both heuristic and DRL agents
-- Performance comparisons and benchmarks
-- Statistical analysis and visualizations
-- Research findings and insights
+## How to Use
+- Browse each folder to access specific CSV experiment results
+- For per-folder structure, see included CSVs (standard header: Metric,Value...)
+- For comparison, open CSVs in Excel/Sheets or process by script
 
-## Folder Structure
+## Recommendations for Reproducibility
+To further improve this directory and ensure analysis is reproducible:
+- Add Python or Jupyter scripts that aggregate or plot the CSV results (e.g., 'scripts/summarize_results.py')
+- Add reference plots (as .png) generated from the analysis scripts
+- Document in each subfolder with a README.txt exactly how those logs were generated (agent config, track, date)
 
-```
-Results-and-Analysis/
-├── Performance-Metrics/
-│   ├── lap-times.csv
-│   ├── collision-rates.csv
-│   └── speed-profiles.csv
-├── Comparison-Studies/
-│   ├── heuristic-vs-drl.md
-│   └── track-adaptability.md
-├── Visualizations/
-│   ├── performance-plots/
-│   └── racing-trajectories/
-└── Statistical-Analysis/
-    ├── significance-tests.py
-    └── correlation-analysis.py
-```
-
-## Key Metrics
-
-### Performance Indicators
-- **Lap Time**: Average and best lap times across different tracks
-- **Success Rate**: Percentage of successful lap completions
-- **Collision Rate**: Number of collisions per lap
-- **Track Coverage**: Percentage of optimal racing line followed
-- **Speed Consistency**: Variance in speed across track sections
-
-### Evaluation Criteria
-- Safety (collision avoidance)
-- Speed (lap time optimization)
-- Consistency (performance repeatability)
-- Adaptability (performance on new tracks)
-- Efficiency (computational resource usage)
-
-## Experimental Setup
-
-### Test Environments
-- Multiple racing track configurations
-- Varying weather and lighting conditions
-- Different vehicle dynamics parameters
-- Obstacle and traffic scenarios
-
-### Data Collection
-- Automated telemetry logging
-- Video recording of racing sessions
-- Real-time performance monitoring
-- Post-processing analysis scripts
-
-## Analysis Methods
-
-### Statistical Techniques
-- Hypothesis testing (t-tests, ANOVA)
-- Regression analysis
-- Time series analysis
-- Machine learning validation metrics
-
-### Visualization Tools
-- Performance trend plots
-- Heatmaps of track utilization
-- 3D trajectory visualizations
-- Comparative bar charts and box plots
-
-## Key Findings
-
-*Results will be populated as experiments are conducted*
-
-### Preliminary Observations
-- Agent behavior analysis
-- Learning curve characteristics
-- Performance trade-offs
-- Failure mode identification
-
-## Publications and Reports
-
-- Technical reports
-- Conference papers
-- Research summaries
-- Methodology documentation
-
-## Usage
-
-To reproduce analysis results:
-
-```bash
-# Navigate to analysis directory
-cd Results-and-Analysis/
-
-# Run statistical analysis
-python Statistical-Analysis/significance-tests.py
-
-# Generate visualizations
-python Visualizations/generate-plots.py
-```
-
-## Contributing
-
-When adding new results:
-1. Follow the established folder structure
-2. Include metadata and experimental parameters
-3. Use consistent naming conventions
-4. Document analysis methods clearly
-5. Update this README with new findings
+## Contribution
+If adding new results:
+- Use a clear subfolder structure
+- Include a README.txt or metadata in any new experiment folder you add
+- Provide scripts or detail for how to analyze or visualize your results.
