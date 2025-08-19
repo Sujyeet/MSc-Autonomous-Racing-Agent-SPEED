@@ -79,8 +79,8 @@ pip install -r requirements.txt
 ### Heuristic Agent
 
 • Load Heuristic-Agent-Project in Unity
-• Select a race scene (e.g., Assets/Scenes/OvalTrack.unity)
-• Press Play to run the agent; logs are saved for every episode
+• Select a race scene (e.g., Assets/Karting/Scenes/MainScene.unity)
+• Press Play to run the agent; logs are saved for every episode (Paste the desired output directory in the editor)
 
 ### DRL Agent (PPO)
 
