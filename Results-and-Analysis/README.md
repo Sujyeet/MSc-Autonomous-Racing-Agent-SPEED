@@ -16,14 +16,3 @@ Each folder contains:
 - For per-folder structure, see included CSVs (standard header: Metric,Value...)
 - For comparison, open CSVs in Excel/Sheets or process by script
 
-## Recommendations for Reproducibility
-To further improve this directory and ensure analysis is reproducible:
-- Add Python or Jupyter scripts that aggregate or plot the CSV results (e.g., 'scripts/summarize_results.py')
-- Add reference plots (as .png) generated from the analysis scripts
-- Document in each subfolder with a README.txt exactly how those logs were generated (agent config, track, date)
-
-## Contribution
-If adding new results:
-- Use a clear subfolder structure
-- Include a README.txt or metadata in any new experiment folder you add
-- Provide scripts or detail for how to analyze or visualize your results.
