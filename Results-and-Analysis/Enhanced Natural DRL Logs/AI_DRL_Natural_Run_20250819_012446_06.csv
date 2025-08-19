@@ -1,0 +1,8 @@
+Metric,Value
+Agent Type,DRL_Natural
+Completion Time (s),43.109
+Collision Count,0
+Distance Traveled (m),
+Average Speed (m/s),16.13171
+Steering Angle Mean (deg),28.36
+Path Deviation Mean (m),14.01
