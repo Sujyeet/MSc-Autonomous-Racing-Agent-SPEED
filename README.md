@@ -19,7 +19,6 @@ Experience the Enhanced Natural DRL agent in action, compare its behavior with y
 | • Deterministic responses | • Human-like smoothness |
 | • Collision-free navigation | • Dynamic decision making |
 
-*Note: Video demonstrations will showcase real-time performance comparisons, lap time differences, and behavioral analysis between the two approaches.*
 
 ## Project Motivation
 Autonomous racing is a prime testbed for intelligent agent research. It requires tight integration of perception, sequential policy, real-time optimization, and adaptability to diverse environmental conditions. This project addresses critical open questions:
