@@ -2,6 +2,33 @@
 
 This repository documents the design, implementation, ablation, and rigorous benchmarking of two distinct AI approaches for autonomous racing in Unity: a deterministic waypoint-based heuristic controller and a deep reinforcement learning (DRL) agent built with Unity ML-Agents (PPO). The work provides an academically robust framework for comparing classical and modern approaches—emphasizing reproducibility, open science, and in-depth technical documentation for MSc-level research.
 
+## 🎮 Playtest Prototype
+
+Try the interactive playtest prototype on Itch.io:
+
+🏁 **[Play SPEED Racing Agents Demo](https://your-username.itch.io/speed-racing-agents)**
+
+Experience both heuristic and DRL agents in action, compare their behaviors, and see the research findings firsthand.
+
+## 📹 Agent Demonstration Videos
+
+### Side-by-Side Agent Comparison
+
+<div align="center">
+
+| Heuristic Agent | Natural DRL Agent |
+|:---------------:|:-----------------:|
+| *Video placeholder - Deterministic waypoint-based controller* | *Video placeholder - PPO-trained adaptive agent* |
+| ![Heuristic Agent Demo](https://via.placeholder.com/400x225/1e3a8a/ffffff?text=Heuristic+Agent+Video) | ![DRL Agent Demo](https://via.placeholder.com/400x225/dc2626/ffffff?text=DRL+Agent+Video) |
+| **Characteristics:** | **Characteristics:** |
+| • Precise waypoint following | • Adaptive behavior learning |
+| • Deterministic responses | • Human-like smoothness |
+| • Collision-free navigation | • Dynamic decision making |
+
+</div>
+
+> **Note:** Video demonstrations will showcase real-time performance comparisons, lap time differences, and behavioral analysis between the two approaches.
+
 ## Project Motivation
 
 Autonomous racing is a prime testbed for intelligent agent research. It requires tight integration of perception, sequential policy, real-time optimization, and adaptability to diverse environmental conditions. This project addresses critical open questions:
@@ -52,21 +79,21 @@ SPEED-Intelligent-Racing-Agents/
 
 • Unity 2021.3.45f1 LTS (mandatory version)
 • Python 3.8+ with pip
-• ML-Agents 0.30.0 (pip install mlagents==0.30.0)
+• ML-Agents 0.30.0 (`pip install mlagents==0.30.0`)
 
 ### Installation Steps
 
-1. Clone the repository:
+1. **Clone the repository:**
 ```bash
 git clone https://github.com/Sujyeet/SPEED-Intelligent-Racing-Agents.git
 cd SPEED-Intelligent-Racing-Agents
 ```
 
-2. Open projects in Unity Hub: select either Heuristic-Agent-Project or DRL-Agent-Project.
-   • Only the folders Assets, Packages, and ProjectSettings are strictly required.
-   • On first open, import will take several minutes due to dependency resolution.
+2. **Open projects in Unity Hub:** select either `Heuristic-Agent-Project` or `DRL-Agent-Project`.
+• Only the folders `Assets`, `Packages`, and `ProjectSettings` are strictly required.
+• On first open, import will take several minutes due to dependency resolution.
 
-3. (Optional) Set up a Python environment for training:
+3. **(Optional) Set up a Python environment for training:**
 ```bash
 python -m venv racing_env
 # Windows: racing_env\Scripts\activate
@@ -78,16 +105,16 @@ pip install -r requirements.txt
 
 ### Heuristic Agent
 
-• Load Heuristic-Agent-Project in Unity
-• Select a race scene (e.g., Assets/Karting/Scenes/MainScene.unity)
+• Load `Heuristic-Agent-Project` in Unity
+• Select a race scene (e.g., `Assets/Karting/Scenes/MainScene.unity`)
 • Press Play to run the agent; logs are saved for every episode (Paste the desired output directory in the editor)
 
 ### DRL Agent (PPO)
 
-• Open DRL-Agent-Project in Unity, ensure ML-Agents is present
-• Assign any .onnx model from Trained-Models/ to the kart agent in test scenes
+• Open `DRL-Agent-Project` in Unity, ensure ML-Agents is present
+• Assign any `.onnx` model from `Trained-Models/` to the kart agent in test scenes
 • Set Behavior Type to "Inference Only" and press Play to visualize evaluation
-• **Retraining**: See Documentation/Setup-Instructions.md for hyperparameters, scripts, and training protocol
+• **Retraining**: See `Documentation/Setup-Instructions.md` for hyperparameters, scripts, and training protocol
 
 ### Human Benchmark
 
@@ -112,7 +139,7 @@ pip install -r requirements.txt
 ### Performance Metrics (example table)
 
 | Agent | Mean Lap Time (s) | Std Dev | Collision Rate | Human-Likeness |
-|-------|------------------|---------|----------------|----------------|
+|-------|------------------|---------|----------------|-----------------|
 | Heuristic Agent | 41.52 | 0.09 | 0% | Low |
 | PPO DRL Agent (Baseline) | 39.8 | 1.4 | <2% | High |
 | DRL Agent (Enhanced Humanlike) | 43.0 | 1.1 | <1% | Very High |
