@@ -6,7 +6,7 @@ This repository documents the design, implementation, ablation, and rigorous ben
 
 Try the interactive playtest prototype on Itch.io:
 
-🏁 **[Play SPEED Racing Agents Demo](https://your-username.itch.io/speed-racing-agents)**
+🏁 **[Play SPEED Racing Agents Demo]([https://your-username.itch.io/speed-racing-agents](https://sujitvarma.itch.io/ml-agent-playtest-prototype))**
 
 Experience both heuristic and DRL agents in action, compare their behaviors, and see the research findings firsthand.
 
