@@ -2,7 +2,7 @@
 
 This repository documents the design, implementation, ablation, and rigorous benchmarking of two distinct AI approaches for autonomous racing in Unity: a deterministic waypoint-based heuristic controller and a deep reinforcement learning (DRL) agent built with Unity ML-Agents (PPO). The work provides an academically robust framework for comparing classical and modern approaches—emphasizing reproducibility, open science, and in-depth technical documentation for MSc-level research.
 
-## 🎮 Playtest Prototype
+## Playtest Prototype
 
 Try the interactive playtest prototype on Itch.io:
 
@@ -10,7 +10,7 @@ Try the interactive playtest prototype on Itch.io:
 
 Experience the Enhanced Natural DRL agent in action, compare its behavior with your gameplay, and see the research findings firsthand.
 
-## 📹 Agent Demonstration Videos
+## Agent Demonstration Videos
 
 ### Side-by-Side Agent Comparison
 
