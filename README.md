@@ -8,7 +8,7 @@ Try the interactive playtest prototype on Itch.io:
 
 🏁 **[Play SPEED Racing Agents Demo]([https://your-username.itch.io/speed-racing-agents](https://sujitvarma.itch.io/ml-agent-playtest-prototype))**
 
-Experience both heuristic and DRL agents in action, compare their behaviors, and see the research findings firsthand.
+Experience the Enhanced Natural DRL agent in action, compare its behavior with your gameplay, and see the research findings firsthand.
 
 ## 📹 Agent Demonstration Videos
 
