@@ -14,5 +14,5 @@ Each folder contains:
 ## How to Use
 - Browse each folder to access specific CSV experiment results
 - For per-folder structure, see included CSVs (standard header: Metric,Value...)
-- For comparison, open CSVs in Excel/Sheets or process by script
+- For comparison, open CSVs in Excel/Sheets or process by script.
 
