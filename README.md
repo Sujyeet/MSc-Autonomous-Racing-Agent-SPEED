@@ -137,21 +137,10 @@ Beyond speed, the work quantifies "natural" behavior:
 • **Academic collaboration**: Designed for MSc and PhD research use; contact author for dataset sharing, integration studies, or advanced experiments
 • **Contributing**: Issue tracker and pull requests are welcome for reproducibility, cross-validation, or improved agent design studies
 
-## Citation
-If this work, code, or methodology contributes to your research, please cite:
 
-```bibtex
-@mastersthesis{sujyeet2025speed,
-  title={SPEED: Intelligent Racing Agents Using Deep Reinforcement Learning and Unity ML-Agents},
-  author={Sujyeet, [Your Full Name]},
-  year={2025},
-  school={[Your University]},
-  type={MSc Thesis}
-}
-```
 
 ## Author & Contact
-• **Sujyeet** (MSc Autonomous Racing, [your.email@domain])
+• **Sujit G** (MSc Autonomous Racing, [sujitvarma70@gmail.com])
 • Queen Mary University of London (for academic coordination)
 • For technical questions, open a GitHub Issue or contact by email
 
