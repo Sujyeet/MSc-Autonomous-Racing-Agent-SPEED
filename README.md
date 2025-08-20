@@ -1,11 +1,8 @@
 # SPEED-Intelligent-Racing-Agents
-
 This repository documents the design, implementation, ablation, and rigorous benchmarking of two distinct AI approaches for autonomous racing in Unity: a deterministic waypoint-based heuristic controller and a deep reinforcement learning (DRL) agent built with Unity ML-Agents (PPO). The work provides an academically robust framework for comparing classical and modern approaches—emphasizing reproducibility, open science, and in-depth technical documentation for MSc-level research.
 
 ## Playtest Prototype
-
 Try the interactive playtest prototype on Itch.io:
-
 🏁 **[Play SPEED Racing Agents Demo]([https://your-username.itch.io/speed-racing-agents](https://sujitvarma.itch.io/ml-agent-playtest-prototype))**
 
 Experience the Enhanced Natural DRL agent in action, compare its behavior with your gameplay, and see the research findings firsthand.
@@ -14,28 +11,22 @@ Experience the Enhanced Natural DRL agent in action, compare its behavior with y
 
 ### Side-by-Side Agent Comparison
 
-<div align="center">
-
 | Heuristic Agent | Natural DRL Agent |
-|:---------------:|:-----------------:|
-| *Video placeholder - Deterministic waypoint-based controller* | *Video placeholder - PPO-trained adaptive agent* |
-| ![Heuristic Agent Demo](https://via.placeholder.com/400x225/1e3a8a/ffffff?text=Heuristic+Agent+Video) | ![DRL Agent Demo](https://via.placeholder.com/400x225/dc2626/ffffff?text=DRL+Agent+Video) |
+|---|---|
+| ![Heuristic Agent Demo](Results-and-Analysis/HEU.gif) | ![DRL Agent Demo](Results-and-Analysis/DRL.gif) |
 | **Characteristics:** | **Characteristics:** |
 | • Precise waypoint following | • Adaptive behavior learning |
 | • Deterministic responses | • Human-like smoothness |
 | • Collision-free navigation | • Dynamic decision making |
 
-</div>
-
-> **Note:** Video demonstrations will showcase real-time performance comparisons, lap time differences, and behavioral analysis between the two approaches.
+*Note: Video demonstrations will showcase real-time performance comparisons, lap time differences, and behavioral analysis between the two approaches.*
 
 ## Project Motivation
-
 Autonomous racing is a prime testbed for intelligent agent research. It requires tight integration of perception, sequential policy, real-time optimization, and adaptability to diverse environmental conditions. This project addresses critical open questions:
 
-• When and where do engineered heuristic controllers outperform or underperform RL agents?
-• How does reward shaping and neural architecture affect RL agent learning, stability, and generalization?
-• Can DRL agents demonstrate truly human-like behavior, as measured by both efficiency and naturalness?
+• **When and where** do engineered heuristic controllers outperform or underperform RL agents?
+• **How does** reward shaping and neural architecture affect RL agent learning, stability, and generalization?
+• **Can** DRL agents demonstrate truly human-like behavior, as measured by both efficiency and naturalness?
 
 ## Summary of Contributions
 
@@ -90,8 +81,8 @@ cd SPEED-Intelligent-Racing-Agents
 ```
 
 2. **Open projects in Unity Hub:** select either `Heuristic-Agent-Project` or `DRL-Agent-Project`.
-• Only the folders `Assets`, `Packages`, and `ProjectSettings` are strictly required.
-• On first open, import will take several minutes due to dependency resolution.
+   • Only the folders `Assets`, `Packages`, and `ProjectSettings` are strictly required.
+   • On first open, import will take several minutes due to dependency resolution.
 
 3. **(Optional) Set up a Python environment for training:**
 ```bash
@@ -139,8 +130,8 @@ pip install -r requirements.txt
 ### Performance Metrics (example table)
 
 | Agent | Mean Lap Time (s) | Std Dev | Collision Rate | Human-Likeness |
-|-------|------------------|---------|----------------|-----------------|
-| Heuristic Agent | 41.52 | 0.09 | 0% | Low |
+|-------|-------------------|---------|----------------|-----------------|
+| Heuristic Agent | 41.5 | 2.0 | 0% | Low |
 | PPO DRL Agent (Baseline) | 39.8 | 1.4 | <2% | High |
 | DRL Agent (Enhanced Humanlike) | 43.0 | 1.1 | <1% | Very High |
 | Human Player | 44.2 | 2.8 | ~3% | Baseline |
@@ -150,7 +141,7 @@ pip install -r requirements.txt
 Beyond speed, the work quantifies "natural" behavior:
 • **Path deviation and steering variance**—plotted time series show DRL agents closely track human smoothness, unlike the mechanical, deterministic baseline
 • **Error and recovery**: Analysis of wall-collisions and recovery strategies
-• **Comprehensive logging**: All logs available for reproduction in Results-and-Analysis/
+• **Comprehensive logging**: All logs available for reproduction in `Results-and-Analysis/`
 
 ### Key Lessons
 
@@ -161,8 +152,8 @@ Beyond speed, the work quantifies "natural" behavior:
 ## Full Reproducibility Commitment
 
 • All experiments use documented seeds and config files; every result in the paper can be regenerated from scripts in this repository
-• **Paper draft**: Documentation/SPEED-Dissertation.pdf (complete analyses, figures, and extended results)
-• **Installation and reproducibility guide**: Documentation/Setup-Instructions.md (step-by-step for every OS)
+• **Paper draft**: `Documentation/SPEED-Dissertation.pdf` (complete analyses, figures, and extended results)
+• **Installation and reproducibility guide**: `Documentation/Setup-Instructions.md` (step-by-step for every OS)
 
 ## Collaboration & Academic Use
 
@@ -185,8 +176,8 @@ If this work, code, or methodology contributes to your research, please cite:
 
 ## Author & Contact
 
-• Sujyeet (MSc Autonomous Racing, [your.email@domain])
-• Queen Mary University of London (for academic coordination)
+• **Sujyeet** (MSc Autonomous Racing, [your.email@domain])
+• **Queen Mary University of London** (for academic coordination)
 • For technical questions, open a GitHub Issue or contact by email
 
 ## License
