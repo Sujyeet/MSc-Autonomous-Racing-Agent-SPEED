@@ -1,8 +1,8 @@
 # SPEED-Intelligent-Racing-Agents
-This repository documents the design, implementation, ablation, and rigorous benchmarking of two distinct AI approaches for autonomous racing in Unity: a deterministic waypoint-based heuristic controller and a deep reinforcement learning (DRL) agent built with Unity ML-Agents (PPO). The work provides an academically robust framework for comparing classical and modern approaches—emphasizing reproducibility, open science, and in-depth technical documentation for MSc-level research.
+This repository documents the design, implementation, ablation, and rigorous benchmarking of two distinct AI approaches for autonomous racing in Unity: a deterministic waypoint-based heuristic controller and a deep reinforcement learning (DRL) agent built with Unity ML-Agents (PPO). The work provides an academically robust framework for comparing classical and modern approaches emphasizing reproducibility, open science, and in-depth technical documentation for research.
 
 ## Playtest Prototype
-Try the interactive playtest prototype on Itch.io: 🏁 **[Play SPEED Racing Agents Demo](https://sujitvarma.itch.io/ml-agent-playtest-prototype)**
+Try the interactive playtest prototype on Itch.io:  **[Play SPEED Racing Agents Demo](https://sujitvarma.itch.io/ml-agent-playtest-prototype)**
 
 Experience the Enhanced Natural DRL agent in action, compare its behavior with your gameplay, and see the research findings firsthand.
 
@@ -24,7 +24,7 @@ Autonomous racing is a prime testbed for intelligent agent research. It requires
 • **Can** DRL agents demonstrate truly human-like behavior, as measured by both efficiency and naturalness?
 
 ## Summary of Contributions
-• **Heuristic Controller**: Fully deterministic, high-performance waypoint follower. Adaptively controls speed and heading for efficient, collision-free lap completion. All parameters and logs are documented for reproducibility.
+• **Heuristic Controller**: Fully deterministic, high performance waypoint follower. Adaptively controls speed and heading for efficient, collision-free lap completion. All parameters and logs are documented for reproducibility.
 • **DRL Racing Agent**: PPO-based agent using raycast-derived sensor input, curriculum learning, and custom reward structure. Multiple ablation studies highlight the trade-offs in architectural depth, reward complexity, and agent robustness.
 • **Human Benchmark Suite**: Tracks and scenes support human demos for direct comparison—lap times, steering smoothness, and behavioral metrics.
 • **Open Experimental Pipeline**: Source code, configuration files, trained models, raw logs, and exhaustive documentation are provided to enable full reproduction of all reported findings.
