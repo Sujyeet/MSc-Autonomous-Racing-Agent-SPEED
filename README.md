@@ -26,7 +26,7 @@ Autonomous racing is a prime testbed for intelligent agent research. It requires
 ## Summary of Contributions
 • **Heuristic Controller**: Fully deterministic, high performance waypoint follower. Adaptively controls speed and heading for efficient, collision-free lap completion. All parameters and logs are documented for reproducibility.
 • **DRL Racing Agent**: PPO-based agent using raycast-derived sensor input, curriculum learning, and custom reward structure. Multiple ablation studies highlight the trade-offs in architectural depth, reward complexity, and agent robustness.
-• **Human Benchmark Suite**: Tracks and scenes support human demos for direct comparison—lap times, steering smoothness, and behavioral metrics.
+• **Human Benchmark Suite**: Tracks and scenes support human demos for direct comparison like lap times, steering smoothness, and behavioral metrics.
 • **Open Experimental Pipeline**: Source code, configuration files, trained models, raw logs, and exhaustive documentation are provided to enable full reproduction of all reported findings.
 
 ## Repository Structure
