@@ -9,8 +9,7 @@ This directory contains experimental results and analysis logs for the S.P.E.E.D
 
 Each folder contains:
 - CSV files of run summaries (lap time, speed, steering, and path deviation metrics)
-- (If present) raw or detailed logs for each experiment run
-
+  
 ## How to Use
 - Browse each folder to access specific CSV experiment results
 - For per-folder structure, see included CSVs (standard header: Metric,Value...)
