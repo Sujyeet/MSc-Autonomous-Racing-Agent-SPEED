@@ -33,6 +33,3 @@ Heuristic-Agent-Project/
     └── agent-specific documentation
 ```
 
-## Next Steps
-
-After creating this structure, each folder should contain appropriate .gitkeep files or initial documentation to maintain the directory structure in version control.
