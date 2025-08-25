@@ -88,7 +88,7 @@ python -c "import stable_baselines3; print('SB3 installed successfully')"
 
 1. **Copy the example configuration file:**
    ```bash
-   cp config/config_example.yaml config/config.yaml
+   cp DRL-Agent-Project/config/ppo/config.yaml
    ```
 
 2. **Edit the configuration file:**
